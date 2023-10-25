@@ -1,0 +1,9 @@
+{
+  "name": "vy-spin",
+  "version": "1.0.0",
+  "description": "加载数据效果",
+  "private": false,
+  "author": "杜家源",
+  "keywords": [],
+  "main": "index.ts"
+}

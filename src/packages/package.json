@@ -1,6 +1,6 @@
 {
   "name": "vy",
   "dependencies": {
-
+    "vy-spin": "1.0.0"
   }
 }

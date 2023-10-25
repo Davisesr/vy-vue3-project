@@ -1,13 +1,26 @@
 <template>
-  <vy-ace-editor>
-
-  </vy-ace-editor>
+  <vy-spin :load-data="loadData" class="define-height">
+    <template #default="{record}">
+      {{ record }}
+    </template>
+  </vy-spin>
 </template>
 
-<script setup lang="ts">
-import {VyAceEditor} from "@/packages/vy-ace-editor"
+<script lang="ts" setup>
+import {VySpin} from "@/packages/vy-spin"
+
+function loadData() {
+  // 模拟请求
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('测试数据')
+    }, 1000)
+  })
+}
 </script>
 
-<style scoped>
-
+<style lang="less" scoped>
+.define-height {
+  height: 300px;
+}
 </style>
