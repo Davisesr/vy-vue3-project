@@ -58,9 +58,7 @@ const record = ref<any>(null)
 const spinning = ref<boolean>(false)
 const errorMessage = ref<string>('')
 
-onMounted(() => {
-  loadDataHandler()
-})
+loadDataHandler()
 
 /**
  * 加载数据

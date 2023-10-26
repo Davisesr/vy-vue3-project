@@ -32,7 +32,7 @@ export function useDebounceRef(value:any, duration = 1000) {
  * 文件详情：优化页面中的循环渲染组件问题，配合 v-for、v-if使用 <br/>
  * 用法：
  * <div v-for="(v,i) in 100" :key="i">
- *   <div v-if="defer(i)">
+ *   <div v-if="useDefer(i)">
  *   </div>
  * </div>
  */

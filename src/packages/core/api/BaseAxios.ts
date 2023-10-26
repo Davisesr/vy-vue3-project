@@ -75,7 +75,8 @@ export default class BaseAxios {
    */
   public responseUse(response: any) {
     // todo 新增操作日志记录
-    return response.data
+    console.log("11",response)
+    return response.data.data
   }
 
   /**
