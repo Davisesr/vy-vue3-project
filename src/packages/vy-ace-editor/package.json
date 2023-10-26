@@ -1,0 +1,9 @@
+{
+  "name": "vy-ace-editor",
+  "version": "1.0.0",
+  "description": "文本ace编辑器",
+  "private": false,
+  "author": "杜家源",
+  "keywords": [],
+  "main": "index.ts"
+}
