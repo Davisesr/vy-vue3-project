@@ -1,8 +1,19 @@
+
 const baseConfig = {
   /**
    * 网关地址
    */
   gatewayUrl: "/api",
+
+  /**
+   * minio
+   */
+  fileHostUrl: "http://121.5.138.130:9001/",
+
+  /**
+   * minio 桶
+   */
+  bucKetName: "website",
 };
 
 /**
