@@ -11,6 +11,7 @@ console.log('编译线程数：', threads)
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // 插件
   plugins: [
     vue(),
     // 按需引入
@@ -24,11 +25,14 @@ export default defineConfig({
     }),
   ],
 
+  //
   resolve: {
+    // 别名
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
+
   // 配置前端服务地址和端口
   server: {
     host: '0.0.0.0', // host: "localhost",
