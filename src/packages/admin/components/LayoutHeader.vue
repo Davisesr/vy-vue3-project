@@ -1,5 +1,5 @@
 <template>
-  <div class="header-wrapper" style="">
+  <div class="header-wrapper">
     <img :src="FAVICON_ICO" alt="">
     <div class="title">
       {{ props.title }}

@@ -14,7 +14,7 @@
             <slot/>
           </div>
         </a-layout-content>
-        <a-layout-footer style="text-align: center" v-if="false">
+        <a-layout-footer style="text-align: center;padding: 16px">
           蜀ICP备20009335号-1
         </a-layout-footer>
       </a-layout>
