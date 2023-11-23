@@ -5,7 +5,9 @@
  */
 
 import {dialog} from "./components/dialog"
+import {Loading} from "./components/loading"
 
 export {
-  dialog
+  dialog,
+  Loading
 }

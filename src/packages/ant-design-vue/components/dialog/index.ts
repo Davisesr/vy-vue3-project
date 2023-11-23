@@ -12,7 +12,7 @@ import type {DialogComponentOptions} from "../../types/dialog.d";
 import {useAntDStore} from "../../store";
 
 function dialog(
-  component: Component,
+  component: Component | any,
   componentProps: DialogComponentOptions,
   modalOrDrawerOptions?: DrawerProps | ModalFuncProps | boolean,
   isDrawer = false
@@ -65,11 +65,11 @@ function dialog(
        * @param e 弹窗或抽屉给与的参数，交由 component 处理
        */
       handleOk(e: any) {
-        if (typeof this.$refs?.component?.handleSubmit === 'function') {
-          this.$refs.component.handleSubmit(e);
+        if (this.$refs.componentRef && typeof this.$refs.componentRef.handleSubmit === 'function') {
+          this.$refs.componentRef.handleSubmit(e);
         } else {
-          console.log('组件中未写handleSubmit方法');
-          this.$refs?.component?.$emit('close');
+          console.error('组件中未写handleSubmit方法');
+          this.$refs?.componentRef?.$emit('close');
         }
       },
 
@@ -77,7 +77,7 @@ function dialog(
        * 弹窗或抽屉触发【close（关闭）】操作，通过 handleSubmit 影响 component 组件
        */
       handleClose() {
-        this.$refs?.component?.$emit('close');
+        this.$refs?.componentRef?.$emit('close');
       },
 
       /**
@@ -111,7 +111,7 @@ function dialog(
           ...componentProps,
           ok: undefined,
           close: undefined,
-          ref: 'component',
+          ref: 'componentRef',
           onOk: (values: any, arg1: any, arg2: any) => {
             if (typeof componentProps?.ok === 'function') {
               componentProps.ok(values, arg1, arg2);

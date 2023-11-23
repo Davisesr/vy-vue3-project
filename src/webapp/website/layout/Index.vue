@@ -22,22 +22,24 @@ import {FooterBar} from "../views/footer-bar"
 
 <style scoped lang="less">
 .main-wrapper {
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
 
   .header-wrapper {
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 1px 2px #0000000d;
-
     z-index: 5;
     position: sticky;
     top: 0;
   }
 
   .content-wrapper {
-    padding: 16px;
+    padding: 0 8px;
+    margin: 8px 0;
     display: flex;
     justify-content: center;
     z-index: 1;
+    overflow: auto;
   }
 
   .footer-wrapper {
