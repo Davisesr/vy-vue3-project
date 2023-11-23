@@ -30,7 +30,7 @@ export default defineComponent({
    *    slots 插槽
    *    emit （派发）emit 传递给父组件
    */
-  setup(props, { attrs, slots, emit }) {
+  setup(props, { emit }) {
     const dictionaryStore = useDictionaryStore()
     const names = (props.modelValue && Object.keys(props.modelValue)) || []
     dictionaryStore.loadByNames(names).then(dictionaryList => {

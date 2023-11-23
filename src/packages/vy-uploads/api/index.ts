@@ -1,5 +1,5 @@
 import axios from "@/axios";
-import {BaseApi} from '@/prod/core'
+import {BaseApi} from '@/packages/core'
 
 class Api extends BaseApi {
   uploadFile(data: any) {

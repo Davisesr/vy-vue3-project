@@ -40,6 +40,7 @@ import {FooterBar} from "../views/footer-bar"
     justify-content: center;
     z-index: 1;
     overflow: auto;
+    scroll-behavior: smooth;
   }
 
   .footer-wrapper {
