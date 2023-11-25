@@ -18,29 +18,6 @@ import {SearchBar} from "../views/search-bar"
 import {ContentBar} from "../views/content-bar"
 import {FooterBar} from "../views/footer-bar"
 
-// import { StorageUtils } from "@/packages/utils/storage"
-//
-//
-// const storageUtils = new StorageUtils(
-//   {
-//     type: 'sessionStorage', //存储类型，localStorage | sessionStorage
-//     prefix: 'ui_0.0.1', //版本号
-//     expire: 60, //过期时间，默认为一天，单位为分钟
-//     isEncrypt: true, //支持加密、解密数据处理
-//   }
-// );
-//
-// const bool:boolean = storageUtils.setStorage(
-//   "dome1",
-//   {
-//     asdasdasdasda:111
-//   }
-// );
-//
-// let storageFromKey = storageUtils.getStorageFromKey('dome');
-// console.log(storageFromKey)
-// // storageUtils.getAllStorage()
-
 </script>
 
 <style scoped lang="less">
