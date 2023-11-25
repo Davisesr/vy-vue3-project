@@ -18,6 +18,21 @@ import {SearchBar} from "../views/search-bar"
 import {ContentBar} from "../views/content-bar"
 import {FooterBar} from "../views/footer-bar"
 
+import {
+  StorageUtils
+} from "@/packages/utils/storage"
+
+
+const storageUtils = new StorageUtils();
+
+const bool:boolean = storageUtils.setStorage(
+  "dome",
+  "11111111111"
+);
+
+let storageFromKey = storageUtils.getStorageFromKey('dome');
+console.log(storageFromKey)
+
 </script>
 
 <style scoped lang="less">
