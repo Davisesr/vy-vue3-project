@@ -46,7 +46,7 @@ const elementId = ref()
 // 自定义锚点容器
 const anchorContainer = () => document.getElementById('content')
 // 锚点显示状态
-const anchorDisplay = computed(() => (props.anchorList.length > 0 && viewportWidth.value < 600) ? 'none' : '')
+const anchorDisplay = computed(() => (props.anchorList.length > 0 && viewportWidth.value < 1350) ? 'none' : '')
 
 /**
  * 锚定选中

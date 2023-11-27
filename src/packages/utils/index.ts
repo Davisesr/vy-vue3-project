@@ -1,5 +1,5 @@
 import {ref,customRef, onMounted, onUnmounted} from "vue"
-
+import {encrypt,decrypt,StorageUtils} from "./storage"
 import globalConfig from "@/config"
 
 class Util{
@@ -112,7 +112,7 @@ class Util{
   }
 
   /**
-   *
+   * todo 列表到子项
    * @param data
    * @param replaceFields
    */
@@ -125,7 +125,7 @@ class Util{
   }
 
   /**
-   *
+   * TODO 要列出的子项
    * @param treeData
    * @param replaceFields
    */
@@ -137,3 +137,10 @@ class Util{
 }
 
 export default new Util();
+
+export {
+  encrypt,
+  decrypt,
+  StorageUtils
+}
+
