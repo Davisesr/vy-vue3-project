@@ -34,8 +34,7 @@ import {FooterBar} from "../views/footer-bar"
   }
 
   .content-wrapper {
-    padding: 0 8px;
-    margin: 8px 0;
+    padding: 8px;
     display: flex;
     justify-content: center;
     z-index: 1;

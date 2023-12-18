@@ -1,25 +1,28 @@
 <template>
-  <div class="body-content-wrapper" id="content">
-    <div class="main-content-wrapper">
+  <div class="body-content-wrapper">
+    <div class="main-content-wrapper" ref="contentRef">
       <div class="content-wrapper">
-        <a-card v-for="(v,i) in anchorList" :key="i" :id="v.href.replace('#','')" :class="(elementId === v.href) ? 'selected' :''">
-          {{ v.title }}
+        <a-card v-for="(v,i) in anchorList" :key="i" :id="v.href?.replace('#','')" :class="(elementId === v.href) ? 'selected' :''">
+          <template #title>
+            {{ v.title }}
+          </template>
+          <template #default>
+            id：{{ v.href?.replace('#', '') }}
+          </template>
         </a-card>
       </div>
     </div>
     <div class="anchor-wrapper">
-      <a-anchor
-        :items="anchorList"
-        :getContainer="anchorContainer"
-        @change="onAnchorChange"/>
+      <a-anchor :affix="false" :getContainer="()=>$refs.contentRef" :items="anchorList" @change="onAnchorChange"/>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import {ref, defineProps, computed} from 'vue';
+import {ref, defineProps, defineEmits, computed} from 'vue';
 import type {PropType} from 'vue';
 
+// props
 const props = defineProps({
   anchorList: {
     type: Array as PropType<any[]>,
@@ -36,17 +39,19 @@ const props = defineProps({
     }
   }
 })
+// emits
+const emit = defineEmits(['change'])
 
-// 获取可视区域的宽度
+
+// 初始化获取可视窗口宽度
 const viewportWidth = ref(window.innerWidth || document.documentElement.clientWidth)
-window.addEventListener('resize', () => (viewportWidth.value = window.innerWidth || document.documentElement.clientWidth))
-
-// 锚 选中
-const elementId = ref()
-// 自定义锚点容器
-const anchorContainer = () => document.getElementById('content')
-// 锚点显示状态
+// 动态获取可视窗口的宽度
+window.addEventListener('resize', () => (viewportWidth.value = (window.innerWidth || document.documentElement.clientWidth)))
+// 根据可视窗口宽度处理【锚点组件】显示状态
 const anchorDisplay = computed(() => (props.anchorList.length > 0 && viewportWidth.value < 1350) ? 'none' : '')
+
+// 锚选中
+const elementId = ref("")
 
 /**
  * 锚定选中
@@ -54,6 +59,7 @@ const anchorDisplay = computed(() => (props.anchorList.length > 0 && viewportWid
  */
 function onAnchorChange(eId: string) {
   elementId.value = eId
+  emit('change', eId)
 }
 
 </script>
@@ -67,8 +73,10 @@ function onAnchorChange(eId: string) {
   .main-content-wrapper {
     width: 100%;
     height: 100%;
+    padding: 0 8px;
     display: flex;
     justify-content: center;
+    overflow: auto;
 
     .content-wrapper {
       width: 1080px;
@@ -81,13 +89,13 @@ function onAnchorChange(eId: string) {
   .anchor-wrapper {
     position: fixed;
     top: 100px;
-    right: 8px;
+    right: 16px;
     width: 100px;
     display: v-bind(anchorDisplay);
   }
-}
 
-.selected {
-  border: 1px solid #1677FF;
+  .selected {
+    border: 1px solid #1677FF;
+  }
 }
 </style>
