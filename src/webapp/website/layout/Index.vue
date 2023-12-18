@@ -27,10 +27,12 @@ import {FooterBar} from "../views/footer-bar"
 
   .header-wrapper {
     background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 1px 2px #0000000d;
+    //box-shadow: 0 1px 2px #0000000d;
     z-index: 5;
-    position: sticky;
-    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
   }
 
   .content-wrapper {
