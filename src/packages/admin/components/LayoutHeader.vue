@@ -1,23 +1,18 @@
 <template>
   <div class="header-wrapper">
-    <img :src="FAVICON_ICO" alt="">
-    <div class="title">
-      {{ props.title }}
+    <div>
+      <slot name="appName"/>
+    </div>
+    <div>
+      <slot name="headerExtra"/>
+    </div>
+    <div>
+      <slot name="accountLeft"/>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import {defineProps} from "vue"
-import FAVICON_ICO from "/public/favicon.ico"
-
-const props = defineProps({
-  title: {
-    type: String,
-    default: "管理后台"
-  }
-})
-
 
 </script>
 
@@ -27,16 +22,7 @@ const props = defineProps({
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 8px;
-
-  img {
-    height: 40px;
-    width: 40px;
-  }
-
-  .title {
-    color: #fff;
-    font-size: 20px
-  }
 }
 </style>
