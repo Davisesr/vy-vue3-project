@@ -21,7 +21,7 @@
         <a-layout-content style="margin: 16px;height: 100%;">
           <router-view-page/>
         </a-layout-content>
-        <a-layout-footer style="text-align: center;padding: 16px">
+        <a-layout-footer style="text-align: center;padding: 16px;background: #fff;">
           <layout-footer/>
         </a-layout-footer>
       </a-layout>
