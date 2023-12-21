@@ -19,10 +19,7 @@
       </a-layout-sider>
       <a-layout style="height: 100%;">
         <a-layout-content style="margin: 16px;height: 100%;">
-          <layout-breadcrumb style="height: 30px;"/>
-          <div style="padding: 0; height: calc(100% - 30px)">
-            <router-view/>
-          </div>
+          <router-view-page/>
         </a-layout-content>
         <a-layout-footer style="text-align: center;padding: 16px">
           <layout-footer/>
@@ -35,7 +32,7 @@
 <script lang="ts" setup>
 import {ref} from "vue"
 
-import LayoutBreadcrumb from "../components/LayoutBreadcrumb.vue"
+import RouterViewPage from "../components/RouterViewPage.vue"
 import LayoutHeader from "../components/LayoutHeader.vue"
 import LayoutMenu from "../components/LayoutMenu.vue"
 import LayoutFooter from "../components/LayoutFooter.vue"
