@@ -14,9 +14,9 @@
 
 
 <script setup lang="ts">
-import {SearchBar} from "../views/search-bar"
-import {ContentBar} from "../views/content-bar"
-import {FooterBar} from "../views/footer-bar"
+import {SearchBar} from "./components/search-bar"
+import {ContentBar} from "./components/content-bar"
+import {FooterBar} from "./components/footer-bar"
 
 </script>
 
